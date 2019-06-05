@@ -1,0 +1,37 @@
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import HomePage from './Home';
+import CataloguePage from './Catalogue';
+import ProductPage from './Product';
+import CartPage from './Cart';
+
+import * as routes from '../constants/routes';
+
+class App extends React.Component {
+  render() {
+    return (
+      <Router>
+        <div style={{height: '100%'}}>
+          <Route
+            exact path={routes.HOME}
+            component={() => <HomePage />}
+          />
+          <Route
+            exact path={routes.CATALOGUE}
+            component={() => <CataloguePage />}
+          />
+          <Route
+            exact path={routes.PRODUCT}
+            component={() => <ProductPage />}
+          />
+          <Route
+            exact path={routes.CART}
+            component={() => <CartPage />}
+          />
+        </div>
+      </Router>
+    )
+  }
+}
+
+export default App;
