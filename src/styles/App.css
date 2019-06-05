@@ -1,0 +1,63 @@
+:root {
+  --gray-100: #F7FAFC;
+  --gray-200: #EDF2F7;
+  --gray-300: #E2E8F0;
+  --gray-400: #CBD5E0;
+  --gray-500: #A0AEC0;
+  --gray-600: #718096;
+  --gray-700: #4A5568;
+  --gray-800: #2D3748;
+  --gray-900: #1A202C;
+}
+
+.ui.menu.navbar {
+  margin: 0;
+}
+
+.ui.menu.navbar .item::before {
+  background: none;
+}
+
+.masthead.segment {
+  min-height: 600px;
+  padding: 0.5em 0em;
+}
+
+.masthead h1.ui.header {
+  margin-top: 3em;
+  margin-bottom: 0em;
+  font-size: 4em;
+  font-weight: bolder;
+}
+.masthead h2 {
+  margin-top: 0em;
+  margin-bottom: 1em;
+  font-size: 1.7em;
+  font-weight: normal;
+}
+
+.ui.vertical.stripe {
+  padding: 8em 0em;
+}
+.ui.vertical.stripe h3 {
+  font-size: 2em;
+}
+.ui.vertical.stripe .button + h3,
+.ui.vertical.stripe p + h3 {
+  margin-top: 3em;
+}
+.ui.vertical.stripe .floated.image {
+  clear: both;
+}
+.ui.vertical.stripe p {
+  font-size: 1.33em;
+}
+.ui.vertical.stripe .horizontal.divider {
+  margin: 3em 0em;
+}
+
+
+.ui.grid > .row.featured-categories > .column {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}

@@ -4,6 +4,7 @@ import HomePage from './Home';
 import CataloguePage from './Catalogue';
 import ProductPage from './Product';
 import CartPage from './Cart';
+import '../styles/App.css';
 
 import * as routes from '../constants/routes';
 
