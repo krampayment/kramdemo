@@ -1,9 +1,14 @@
 import React from "react";
+import { withRouter } from 'react-router-dom';
 
-const HomePage = () => (
-  <div>
-    <h1>Hi there! I am the Home Page.</h1>
-  </div>
-);
+class HomePage extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>Hi there! I am the Home Page.</h1>
+      </div>
+    );
+  };
+};
 
-export default HomePage;
+export default withRouter(HomePage);
