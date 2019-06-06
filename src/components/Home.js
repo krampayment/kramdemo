@@ -9,9 +9,9 @@ class HomePage extends React.Component {
       <div>
         <NavBar />
 
-        <div className="ui inverted vertical masthead center aligned segment">
+        <div className="ui vertical masthead background center aligned segment">
           <div className="ui text container">
-            <h1 className="ui inverted header">
+            <h1 className="ui header">
               TRADE
             </h1>
             <h2>The best quality products, available to everyone.</h2>

@@ -18,6 +18,10 @@
   background: none;
 }
 
+.ui.background.segment {
+  background: var(--gray-200);
+}
+
 .masthead.segment {
   min-height: 600px;
   padding: 0.5em 0em;
@@ -42,7 +46,7 @@
   }
   .masthead h1.ui.header {
     font-size: 2em;
-    margin-top: 1.5em;
+    margin-top: 2em;
   }
   .masthead h2 {
     margin-top: 0.5em;
@@ -51,7 +55,7 @@
 }
 
 .ui.vertical.stripe {
-  padding: 8em 0em;
+  padding: 10em 0em;
 }
 
 .ui.vertical.stripe h3 {
