@@ -31,13 +31,34 @@ class HomePage extends React.Component {
             {/* Need to credit photographers for photos from Unsplash  */}
             <div className="row featured-categories">
               <div className="four wide column">
-                <img src="/images/fashion.jpg" className="ui large bordered image" />
+                <a class="ui card" href="catalogue">
+                  <a class="image" href="catalogue">
+                    <img src="/images/fashion.jpg" className="ui large bordered image" />
+                  </a>
+                  <div class="content">
+                    <div class="center aligned header">Fashion</div>
+                  </div>
+                </a>
               </div>
               <div className="four wide column">
-                <img src="/images/electronics.jpg" className="ui large bordered image" />
+                <a class="ui card" href="catalogue">
+                  <a class="image" href="catalogue">
+                    <img src="/images/electronics.jpg" className="ui large bordered image" />
+                  </a>
+                  <div class="content">
+                    <div class="center aligned header">Electronics</div>
+                  </div>
+                </a>
               </div>
               <div className="four wide column">
-                <img src="/images/essentials.jpg" className="ui large bordered image" />
+                <a class="ui card" href="catalogue">
+                  <a class="image" href="catalogue">
+                    <img src="/images/essentials.jpg" className="ui large bordered image" />
+                  </a>
+                  <div class="content">
+                    <div class="center aligned header">Essentials</div>
+                  </div>
+                </a>
               </div>
               <div className="four wide center aligned column">
                 <h1 className="ui header" >Shop Now</h1>
