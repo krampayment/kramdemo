@@ -23,46 +23,42 @@ class HomePage extends React.Component {
         </div>
 
         <div className="ui vertical stripe segment">
-          <div className="ui middle aligned stackable grid container">
+          <div className="ui middle aligned grid container">
             <div className="row">
               <h1 className="ui header column">Featured Categories</h1>
             </div>
             
             {/* Need to credit photographers for photos from Unsplash  */}
-            <div className="row featured-categories">
-              <div className="four wide column">
-                <a class="ui card" href="catalogue">
-                  <a class="image" href="catalogue">
+            <div className="ui four cards featured-categories">
+                <a className="ui card" href="catalogue">
+                  <a className="image" href="catalogue">
                     <img src="/images/fashion.jpg" className="ui large bordered image" />
                   </a>
-                  <div class="content">
-                    <div class="center aligned header">Fashion</div>
+                  <div className="content">
+                    <div className="center aligned header">Fashion</div>
                   </div>
                 </a>
-              </div>
-              <div className="four wide column">
-                <a class="ui card" href="catalogue">
-                  <a class="image" href="catalogue">
+                <a className="ui card" href="catalogue">
+                  <a className="image" href="catalogue">
                     <img src="/images/electronics.jpg" className="ui large bordered image" />
                   </a>
-                  <div class="content">
-                    <div class="center aligned header">Electronics</div>
+                  <div className="content">
+                    <div className="center aligned header">Electronics</div>
                   </div>
                 </a>
-              </div>
-              <div className="four wide column">
-                <a class="ui card" href="catalogue">
-                  <a class="image" href="catalogue">
+                <a className="ui card" href="catalogue">
+                  <a className="image" href="catalogue">
                     <img src="/images/essentials.jpg" className="ui large bordered image" />
                   </a>
-                  <div class="content">
-                    <div class="center aligned header">Essentials</div>
+                  <div className="content">
+                    <div className="center aligned header">Essentials</div>
                   </div>
                 </a>
-              </div>
-              <div className="four wide center aligned column">
-                <h1 className="ui header" >Shop Now</h1>
-              </div>
+                <a className="ui card" href="catalogue">
+                  <div className="content shop">
+                    <div className="center aligned ui huge header">Shop Now</div>
+                  </div>
+                </a>
             </div>
           </div>
         </div>

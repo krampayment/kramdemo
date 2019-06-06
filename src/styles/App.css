@@ -79,9 +79,15 @@
   margin: 3em 0em;
 }
 
-.ui.grid > .row.featured-categories > .column {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+.ui.featured-categories > .ui.card > .shop {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background: var(--gray-700);
+}
+
+.ui.featured-categories > .ui.card > .shop > .header {
+  color: white;
 }
 
 .footer.segment {
