@@ -1,12 +1,14 @@
 import React from "react";
 import { withRouter } from 'react-router-dom';
 import NavBar from './Nav';
+import Footer from './Footer';
 
 class HomePage extends React.Component {
   render() {
     return (
       <div>
         <NavBar />
+
         <div className="ui inverted vertical masthead center aligned segment">
           <div className="ui text container">
             <h1 className="ui inverted header">
@@ -18,7 +20,6 @@ class HomePage extends React.Component {
               <i className="search icon"></i>
             </div>
           </div>
-
         </div>
 
         <div className="ui vertical stripe segment">
@@ -26,6 +27,8 @@ class HomePage extends React.Component {
             <div className="row">
               <h1 className="ui header column">Featured Categories</h1>
             </div>
+            
+            {/* Need to credit photographers for photos from Unsplash  */}
             <div className="row featured-categories">
               <div className="four wide column">
                 <img src="/images/fashion.jpg" className="ui large bordered image" />
@@ -40,13 +43,10 @@ class HomePage extends React.Component {
                 <h1 className="ui header" >Shop Now</h1>
               </div>
             </div>
-
           </div>
-                   
-
         </div>
-       
-        
+
+        <Footer />
       </div>
     );
   };
