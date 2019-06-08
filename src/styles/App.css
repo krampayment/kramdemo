@@ -94,3 +94,83 @@
 .footer.segment {
   padding: 5em 0em;
 }
+
+/* Catalogue Page Style */
+
+.ui.header.margin {
+  margin: 1em 1em;
+}
+
+.ui.vertical.menu {
+  margin-left: 1em;
+  padding: 1em 1em 2em 1em; 
+}
+
+.ui.grid>[class*="two wide"].column {
+  width: 17rem!important;
+}
+
+.ui.grid>[class*="fourteen wide"].column {
+  width: calc(100vw - 17rem)!important;
+}
+
+@media only screen and (max-width: 1172px) {
+  .ui.vertical.menu {
+    width: 100%;
+  }
+  .ui.grid>[class*="two wide"].column {
+    width: 20%!important;
+  }
+  .ui.grid>[class*="fourteen wide"].column {
+    width: 80%!important;
+  }
+  #catalogue .header.item-name {
+    font-size: 14px;
+  }
+}
+
+.ui.vertical.menu .item {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.ui.vertical.menu .item::before {
+  height: 0px;
+}
+
+#catalogue .ui.text.container {
+  width: 100%;
+  max-width: none !important;
+}
+
+.cat-title {
+  margin-left: 0.1rem;
+  display: inline-block;
+}
+
+.cat-container {
+  margin-top: 1em;
+  position: relative;
+}
+
+.sort-dropdown {
+  position: absolute !important;
+  right: 1em;
+  top: 1em;
+}
+
+.ui.card.item {
+  width: 100%;
+}
+
+.five.wide.column.item {
+  margin-right: 3.5em;
+}
+
+.five.wide.column.item:nth-of-type(3n) {
+  margin-right: 0;
+}
+
+#catalogue .ui.grid {
+  margin-bottom: 5em;
+}
