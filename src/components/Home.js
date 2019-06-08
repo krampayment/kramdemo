@@ -1,7 +1,6 @@
 import React from "react";
 import { withRouter } from 'react-router-dom';
 import NavBar from './Nav';
-import Footer from './Footer';
 
 class HomePage extends React.Component {
   render() {
@@ -29,7 +28,7 @@ class HomePage extends React.Component {
             </div>
             
             {/* Need to credit photographers for photos from Unsplash  */}
-            <div className="ui four cards featured-categories">
+            <div className="ui four cards stackable featured-categories">
                 <a className="ui card" href="catalogue">
                   <a className="image" href="catalogue">
                     <img src="/images/fashion.jpg" className="ui large bordered image" />
