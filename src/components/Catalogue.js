@@ -40,7 +40,7 @@ class CataloguePage extends React.Component {
   render() {
     return (
       <div id="catalogue">
-        <NavBar />
+        <NavBar history={this.props.history}/>
 
         <div className="ui header margin">
           <h5>Home / Categories / Fashion / Shirts</h5>

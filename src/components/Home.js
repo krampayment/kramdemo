@@ -6,7 +6,7 @@ class HomePage extends React.Component {
   render() {
     return (
       <div>
-        <NavBar />
+        <NavBar history={this.props.history}/>
 
         <div className="ui vertical masthead background center aligned segment">
           <div className="ui text container">
