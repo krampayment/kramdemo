@@ -8,6 +8,12 @@
   --gray-700: #4A5568;
   --gray-800: #2D3748;
   --gray-900: #1A202C;
+  --blue-link: #4299E1;
+  --kram-purple: #782ED7;
+}
+
+#root {
+  height: 100%;
 }
 
 .ui.menu.navbar {
@@ -293,4 +299,36 @@
 #cart .ui.button.close {
   padding:0 1.5%;
   background: none;
+}
+
+/* Login Page Styles */
+
+#login-segment {
+  max-width: 450px;
+  text-align: left;
+}
+
+#login-segment > .ui.header > .content {
+  font-size: 2.2rem;
+}
+
+#login-segment > .ui.header > .link {
+  color: var(--blue-link);
+  text-decoration: underline;
+  font-size: 1.4rem;
+}
+
+#login-segment > .ui.form > #login-button {
+  background: var(--kram-purple);
+  color: white;
+}
+
+#login-segment > #forgot-password {
+  margin: 1em 0;
+}
+
+#login-segment > #forgot-password > .link {
+  color: var(--blue-link);
+  text-decoration: underline;
+  font-size: 1.2rem;
 }
