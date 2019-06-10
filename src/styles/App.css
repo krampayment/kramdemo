@@ -59,7 +59,7 @@
 }
 
 .ui.vertical.stripe {
-  padding: 10em 0em;
+  padding: 8em 0em;
 }
 
 .ui.vertical.stripe h3 {
@@ -176,6 +176,39 @@
 
 #catalogue .ui.grid {
   margin-bottom: 5em;
+}
+
+/* Product Page Styles */
+
+.ui.huge.header.product-name {
+  margin-bottom: 0;
+}
+
+.ui.header.product-price {
+  margin-top: 0;
+  font-weight: normal;
+}
+
+.ui.form > .field  > .input > .quantity {
+  text-align: center;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.product-description {
+  color: var(--gray-900)
+}
+
+.ui.vertical.stripe p.product-description {
+  font-size: 1.2em;
+}
+
+.ui.cards > .card > .content.related-product {
+  color: black;
+}
+
+.ui[class*="left action"].input > .button.right {
+  border-radius: 0 .28571429rem .28571429rem 0;
 }
 
 /* Cart Page Styles */
