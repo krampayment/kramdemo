@@ -5,14 +5,14 @@ class LoginPage extends React.Component {
   render() {
     return (
       <div id="kram-payment" class="ui middle aligned center aligned grid kram-payment">
-        <div id="login-segment" class="column">
+        <div id="login-segment" class="authentication column">
           <h1 class="ui header">
             <div class="content">
               Log in to KRAM
             </div>
             <a class="sub header link" href="signup">or create an account</a>
           </h1>
-          <form class="ui large form">
+          <div class="ui large form">
             <div class="field">
               <label>Email</label>
               <input type="text" placeholder="e.g. john@kram.com" />
@@ -23,7 +23,7 @@ class LoginPage extends React.Component {
             </div>
             
             <button id="login-button" class="fluid ui large button">Log In</button>
-          </form>
+          </div>
           <div id="forgot-password">
             <a class="link" href="#">Forgot your password?</a>  
           </div>

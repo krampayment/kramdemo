@@ -315,21 +315,6 @@
   text-align: left;
 }
 
-#login-segment > .ui.header > .content {
-  font-size: 2.2rem;
-}
-
-#login-segment > .ui.header > .link {
-  color: var(--blue-link);
-  text-decoration: underline;
-  font-size: 1.4rem;
-}
-
-#login-segment > .ui.form > #login-button {
-  background: var(--kram-purple);
-  color: white;
-}
-
 #login-segment > #forgot-password {
   margin: 1em 0;
 }
@@ -338,4 +323,39 @@
   color: var(--blue-link);
   text-decoration: underline;
   font-size: 1.2rem;
+}
+
+.authentication > .ui.header > .content {
+  font-size: 2.2rem;
+}
+
+.authentication > h1.ui.header > .sub.header.link {
+  color: var(--blue-link);
+  text-decoration: underline;
+  font-size: 1.4rem;
+}
+
+.authentication > .ui.form > #login-button {
+  background: var(--kram-purple);
+  color: white;
+}
+
+
+/* Signup Page Styles */
+
+#account-details {
+  padding-left: 0;
+  padding-right: 5rem;
+}
+
+#card-details {
+  padding-right: 0;
+  padding-left: 5rem;
+}
+
+#signup-button {
+  background: var(--kram-purple);
+  padding-left: 5rem;
+  padding-right: 5rem;
+  color: white;
 }
