@@ -303,6 +303,13 @@
 
 /* Login Page Styles */
 
+#kram-payment {
+  height: 100%;
+  border-width: 1.7rem 0 0 0;
+  border-style: solid;
+  border-color: var(--kram-purple);
+}
+
 #login-segment {
   max-width: 450px;
   text-align: left;

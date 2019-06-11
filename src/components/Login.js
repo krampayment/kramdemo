@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 class LoginPage extends React.Component {
   render() {
     return (
-      <div class="ui middle aligned center aligned grid" style={{height:'100%'}}>
+      <div id="kram-payment" class="ui middle aligned center aligned grid kram-payment">
         <div id="login-segment" class="column">
           <h1 class="ui header">
             <div class="content">
