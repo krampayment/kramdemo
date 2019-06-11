@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 class LoginPage extends React.Component {
   render() {
     return (
-      <div id="kram-payment" class="ui middle aligned center aligned grid kram-payment">
+      <div id="kram-payment" class="ui middle aligned center aligned grid">
         <div id="login-segment" class="authentication column">
           <h1 class="ui header">
             <div class="content">
@@ -22,7 +22,7 @@ class LoginPage extends React.Component {
               <input type="text" placeholder="e.g. ••••••••••" />
             </div>
             
-            <button id="login-button" class="fluid ui large button">Log In</button>
+            <a id="login-button" class="fluid ui large button" href="checkout">Log In</a>
           </div>
           <div id="forgot-password">
             <a class="link" href="#">Forgot your password?</a>  

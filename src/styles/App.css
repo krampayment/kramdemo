@@ -308,6 +308,7 @@
   border-width: 1.7rem 0 0 0;
   border-style: solid;
   border-color: var(--kram-purple);
+  margin: -1rem;
 }
 
 #login-segment {
@@ -357,5 +358,33 @@
   background: var(--kram-purple);
   padding-left: 5rem;
   padding-right: 5rem;
+  color: white;
+}
+
+/* Checkout Page Styles */
+.ui.steps.checkout-steps {
+  margin-top:2rem;
+  border-radius: 0;
+}
+
+@media only screen and (max-width:767px) {
+  .ui.steps.checkout-steps {
+    margin-top: 0;
+  }
+
+  .ui.steps.checkout-steps:not(.unstackable) .step:first-child {
+   border-radius: 0;
+  }
+  .ui.steps.checkout-steps:not(.unstackable) .step:last-child {
+   border-radius: 0;
+  }
+}
+
+#kram-payment .ui.container.steps-content {
+  margin-top:2rem;
+}
+
+.ui.button.kram-button {
+  background: var(--kram-purple);
   color: white;
 }

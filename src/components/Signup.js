@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 class SignupPage extends React.Component {
   render() {
     return (
-      <div id="kram-payment" class="ui middle aligned grid kram-payment">
+      <div id="kram-payment" class="ui middle aligned grid">
         <div id="signup-segment" class="authentication ui grid container column">
           <h1 class="ui header">
             <div class="content">

@@ -6,6 +6,7 @@ import ProductPage from './Product';
 import CartPage from './Cart';
 import LoginPage from './Login';
 import SignupPage from './Signup';
+import CheckoutPage from './Checkout';
 import '../styles/App.css';
 
 import * as routes from '../constants/routes';
@@ -38,6 +39,10 @@ class App extends React.Component {
           <Route
             exact path={routes.SIGNUP}
             component={() => <SignupPage />}
+          />
+          <Route
+            exact path={routes.CHECKOUT}
+            component={() => <CheckoutPage />}
           />
         </div>
       </Router>
