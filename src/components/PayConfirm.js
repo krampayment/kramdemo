@@ -117,7 +117,7 @@ class PayConfirmPage extends React.Component {
                 <button class="ui button secondary" onClick={this.back}>Previous Step</button>
               </div>
               <div class="right floated column">
-                <button class="ui button kram-button right floated" onClick={this.saveAndContinue}>Next Step</button>
+                <button class="ui button kram-button right floated" onClick={this.continue}>Next Step</button>
               </div>
             </div>
           </div>

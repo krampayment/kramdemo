@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from 'react-router-dom';
 import PayGroupPage from './PayGroup'
 import PayConfirmPage from './PayConfirm'
+import PayCompletePage from './PayComplete'
 
 const members = [
   {
@@ -50,6 +51,9 @@ class AddMembersPage extends React.Component {
       
       case 2:
         return <PayConfirmPage members={this.state.members} prevStep={this.prevStep} nextStep={this.nextStep} />
+
+      case 3:
+        return <PayCompletePage prevStep={this.prevStep} nextStep={this.nextStep}/>
     }
     
   };

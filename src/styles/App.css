@@ -10,6 +10,8 @@
   --gray-900: #1A202C;
   --blue-link: #4299E1;
   --kram-purple: #782ED7;
+  --green-100: #C6F6D5;
+  --green-200: #38A169;
 }
 
 #root {
@@ -487,6 +489,29 @@
 #kram-payment .content.name {
   font-size: 1rem;
 }
+
+#completed-segment {
+  margin-top: 2em;
+  max-width: 450px;
+}
+
+#completed-segment > .row {
+  margin-top: 1em;
+  text-align: center;
+}
+
+#completed-segment > .actions {
+  margin-top: 3em;
+  text-align: center;
+}
+
+#completed-smile {
+  background: var(--green-100);
+  padding: 10px;
+  margin-bottom: 1em;
+  border-radius: 50%;
+}
+
 
 /* DemoEntry Page Styles */
 
