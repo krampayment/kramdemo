@@ -3,6 +3,10 @@ import { withRouter } from 'react-router-dom';
 
 class PayGroupPage extends React.Component {
 
+  state = {
+    inputStyle: "field"
+  }
+
   continue = (e) => {
     e.preventDefault();
     this.props.nextStep()
@@ -10,7 +14,16 @@ class PayGroupPage extends React.Component {
 
   addMember = (e) => {
     e.preventDefault();
-    this.props.onAddMember();
+    if (this.isEmail(this.props.invite.email)) {
+      this.props.onAddMember();
+      this.setState({ inputStyle: "field"});
+    } else {
+      this.setState({ inputStyle: "field error"});
+    }
+  }
+
+  isEmail = (email) => {
+    return /^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$/.test( email );	
   }
   
   render() {
@@ -50,7 +63,7 @@ class PayGroupPage extends React.Component {
               <div class="field">
                 <input type="text" placeholder="Member's Name" value={this.props.invite.name} onChange={this.props.handleChange('name')} />
               </div>
-              <div class="field">
+              <div class={this.state.inputStyle}>
                 <input type="text" placeholder="Member's Email" value={this.props.invite.email} onChange={this.props.handleChange('email')} />
               </div>
               <a class="ui button kram-button" onClick={this.addMember}>Add Member</a>

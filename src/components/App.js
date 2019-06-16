@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import HomePage from './Home';
+import DemoEntryPage from './DemoEntry';
 import CataloguePage from './Catalogue';
-import ProductPage from './Product';
+import ProductPage from './ProductDemo';
 import CartPage from './Cart';
 import LoginPage from './Login';
 import SignupPage from './Signup';
@@ -16,16 +17,20 @@ class App extends React.Component {
     return (
       <Router>
         <div style={{height: '100%'}}>
-          <Route
+          {/* <Route
             exact path={routes.HOME}
             component={() => <HomePage />}
+          /> */}
+          <Route
+            exact path={routes.DEMOENTRY}
+            component={() => <DemoEntryPage />}
           />
           <Route
             exact path={routes.CATALOGUE}
             component={() => <CataloguePage />}
           />
           <Route
-            exact path={routes.PRODUCT}
+            exact path={routes.PRODUCTDEMO}
             component={() => <ProductPage />}
           />
           <Route

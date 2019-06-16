@@ -26,6 +26,7 @@
 
 .ui.background.segment {
   background-color: #edf2f7;
+  padding: 8em 2em!important;
 }
 
 .ui.background.masthead.segment {
@@ -336,6 +337,11 @@
   font-size: 1.4rem;
 }
 
+.authentication > h1.ui.header > .sub.header.description {
+  color: black;
+  font-size: 1.2rem;
+}
+
 .authentication > .ui.form > #login-button {
   background: var(--kram-purple);
   color: white;
@@ -382,9 +388,120 @@
 
 #kram-payment .ui.container.steps-content {
   margin-top:2rem;
+  padding: 1.5em;
 }
 
 .ui.button.kram-button {
   background: var(--kram-purple);
   color: white;
+}
+
+#kram-payment {
+  padding: 2em;
+}
+
+#kram-payment .fill {
+  width: 100%;
+}
+
+#kram-payment .credit-details {
+  display: flex;
+  align-items: center;
+}
+
+#kram-payment .billing-details {
+  display: flex;
+  align-items: center;
+  padding: 1em 2em;
+}
+
+#kram-payment .bill {
+  padding-bottom: 2rem;
+}
+
+#kram-payment .content.members {
+  padding-bottom: 0.5rem;
+  overflow-y: scroll;
+}
+
+#kram-payment .header.payment {
+  margin-bottom: 0.5em;
+  margin-top: 0rem;
+}
+
+#kram-payment .header.billing {
+  margin-top: 1.5em;
+}
+
+#kram-payment .ui.cards~.ui.cards {
+  margin-top: 0;
+}
+
+#kram-payment .pay-amount {
+  text-align: right;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+#kram-payment .ui.vertical.segment.members {
+  padding: 0.5rem 0;
+}
+
+#kram-payment .ui.header.center {
+  display: flex;
+}
+
+#kram-payment .wide.column {
+  padding: 0.5rem;
+}
+
+#kram-payment .right-top {
+  margin-bottom: 0.5em;
+  height: 194px;
+}
+
+#kram-payment .right-btm {
+  margin-top: 0.5em;
+}
+
+#kram-payment .ui.grid.grid-margin {
+  margin-top: 1em;
+}
+
+#kram-payment .ui.grid.grid-padding {
+  padding: 0 0.5em;
+}
+
+#kram-payment .four.column.row.row-margin {
+  margin-top: 1em;
+}
+
+#kram-payment .icon-margin {
+  margin-right: 1em;
+}
+
+#kram-payment .sub.header.email {
+  font-size: 0.8rem;
+}
+
+#kram-payment .content.name {
+  font-size: 1rem;
+}
+
+/* DemoEntry Page Styles */
+
+#demo-segment {
+  max-width: 600px;
+  text-align: left;
+}
+
+#demo-segment .content.demo-header {
+  margin-bottom: 1.5rem;
+  font-size: 1.5em;
+}
+
+#demo-button {
+  background: var(--kram-purple);
+  color: white;
+  margin-top: 2em;
 }

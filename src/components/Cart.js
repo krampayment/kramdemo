@@ -49,10 +49,14 @@ class CartPage extends React.Component {
     this.setState({ items });
   }
 
+  register = () => {
+    this.props.history.push("/signup");
+  }
+
   render() {
     return (
       <div id="cart">
-        <NavBar />
+        <NavBar history={this.props.history}/>
         <div className="ui text container">
           <div className="ui header title">
             <h1>Your Cart</h1>
@@ -94,7 +98,7 @@ class CartPage extends React.Component {
             </p>
           </div>
           <div className = "last">
-            <button class="ui button kram">
+            <button onClick={this.register} class="ui button kram">
               <b>Pay By Kram</b>
             </button>
             <button class="ui button checkout">

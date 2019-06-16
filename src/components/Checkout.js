@@ -49,7 +49,7 @@ class AddMembersPage extends React.Component {
                   invite={invite} members={this.state.members} />
       
       case 2:
-        return <PayConfirmPage prevStep={this.prevStep} nextStep={this.nextStep} />
+        return <PayConfirmPage members={this.state.members} prevStep={this.prevStep} nextStep={this.nextStep} />
     }
     
   };

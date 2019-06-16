@@ -14,9 +14,9 @@ const NavBar = (props) => {
         <a className="item">About</a>
         <a className="item">Shop</a>
         <a className="item">Help</a>
-        <div class="item">
+        {/* <div class="item">
           <button class="ui secondary button" onClick={() => {navToCart(props.history)}}>Your Cart</button>
-        </div>
+        </div> */}
       </div>
     </div>
     )

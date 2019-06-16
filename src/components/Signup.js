@@ -2,6 +2,11 @@ import React from "react";
 import { withRouter } from 'react-router-dom';
 
 class SignupPage extends React.Component {
+
+  setGroup = () => {
+    this.props.history.push('/checkout');
+  }
+
   render() {
     return (
       <div id="kram-payment" class="ui middle aligned grid">
@@ -54,7 +59,7 @@ class SignupPage extends React.Component {
             </div>
             <div class="row center aligned">
               <div class="ui text container center aligned">
-                <button id="signup-button" class="ui large button">Create New Account</button>
+                <button id="signup-button" class="ui large button" onClick={this.setGroup}>Create New Account</button>
               </div>
             </div>
           </div>
