@@ -1,7 +1,31 @@
 import React from "react";
 import { withRouter } from 'react-router-dom';
+import axios from 'axios';
 
 class DemoEntry extends React.Component {
+
+  state = {
+    name: "",
+    email: ""
+  }
+
+  sendEmail = () => {
+    axios.post("http://localhost:3000/", {
+      members: [{
+        "email_address": this.state.email,
+        "status": "unsubscribed",
+        "merge_fields": {
+          "FNAME": this.state.name,
+          "LNAME": ""
+        }
+      }]
+    })
+  }
+
+  handleChange = (e) => {
+    this.setState({[e.target.name]: e.target.value});
+  }
+
   render() {
     return (
       <div id="kram-payment" class="ui middle aligned center aligned grid">
@@ -15,14 +39,14 @@ class DemoEntry extends React.Component {
           <div class="ui large form">
             <div class="field">
               <label>Name</label>
-              <input type="text" placeholder="e.g. John Wick" />
+              <input name="name" onChange={this.handleChange} type="text" placeholder="e.g. John Wick" />
             </div>
             <div class="field">
               <label>Email</label>
-              <input type="text" placeholder="e.g. john@kram.com" />
+              <input name="email" onChange={this.handleChange} type="text" placeholder="e.g. john@kram.com" />
             </div>
             
-            <a id="demo-button" class="fluid ui large button" href="product">Continue to Demo</a>
+            <a id="demo-button" class="fluid ui large button" onClick={this.sendEmail}>Continue to Demo</a>
           </div>
         </div>
       </div>
