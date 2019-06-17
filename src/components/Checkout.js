@@ -40,13 +40,18 @@ class AddMembersPage extends React.Component {
     this.setState({name: '', email: '', members: added});
   }
 
+  onRemoveMember = (index) => {
+    this.state.members.splice(index, 1);
+    this.setState({ members: this.state.members });
+  }
+
   render() {
     const { name, email } = this.state;
     const invite = { name, email };
     switch(this.state.step) {
       case 1:
         return <PayGroupPage nextStep={this.nextStep} 
-                  onAddMember={this.onAddMember} handleChange={this.handleChange} 
+                  onAddMember={this.onAddMember} onRemoveMember={this.onRemoveMember} handleChange={this.handleChange} 
                   invite={invite} members={this.state.members} />
       
       case 2:

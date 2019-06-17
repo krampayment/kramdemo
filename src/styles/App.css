@@ -490,6 +490,26 @@
   font-size: 1rem;
 }
 
+#kram-payment .ui.cards > .group-member-card {
+  justify-content: center;
+  padding: 1em;
+}
+
+#kram-payment .ui.items > .item .group-member .meta {
+  margin: 0;
+}
+
+#kram-payment .ui.cards > .group-member .meta {
+  font-size: 0.9em;
+  font-weight: normal;
+  color: rgba(0,0,0,.4);
+}
+
+#kram-payment .ui.items > .item.remove-member {
+  color: var(--blue-link);
+  text-decoration: underline;
+}
+
 #completed-segment {
   margin-top: 2em;
   max-width: 450px;

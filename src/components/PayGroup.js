@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from 'react-router-dom';
+import Faker from "faker";
 
 class PayGroupPage extends React.Component {
 
@@ -20,6 +21,10 @@ class PayGroupPage extends React.Component {
     } else {
       this.setState({ inputStyle: "field error"});
     }
+  }
+
+  removeMember = (index) => {
+    this.props.onRemoveMember(index);
   }
 
   isEmail = (email) => {
@@ -73,16 +78,42 @@ class PayGroupPage extends React.Component {
           <div class="ui four doubling cards">
             { this.props.members.map((member, index) => {
               return (
-                <div class="card">
-                  <div class="content">
-                    <div class="header">{member.name}</div>
-                    <div class="meta">{member.email}</div>
+                <div class="card group-member-card">
+                  <div class="ui items">
+                    <div class="item">
+                      <div class="ui mini circular image">
+                        <img src={Faker.image.avatar()} />
+                      </div>
+                      <div class="middle aligned content group-member">
+                        <a class="header">{member.name}</a>
+                        <div class="meta">
+                          <span>{member.email}</span>
+                        </div>
+                      </div>
+                    </div>
+                    {index > 0 &&
+                    <div>
+                      <div class="ui mini vertical animated basic button">
+                        <div class="visible content">Edit</div>
+                        <div class="hidden content">
+                          <i class="right pencil icon"></i>
+                        </div>
+                      </div>
+                      <div class="ui mini vertical animated red basic button" onClick={() => this.removeMember(index)}>
+                        <div class="visible content">Remove</div>
+                        <div class="hidden content">
+                          <i class="right trash icon"></i>
+                        </div>
+                      </div>
+                    </div>
+                    }
                   </div>
                 </div>
               )
             })}
+            
           </div>
-          <div class="four column row">
+          <div class="four column row row-margin">
             <div class="left floated column"></div>
             <div class="right floated column">
               <button class="ui button kram-button right floated" onClick={this.continue}>Next Step</button>
