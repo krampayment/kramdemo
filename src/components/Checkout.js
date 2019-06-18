@@ -14,8 +14,6 @@ const members = [
 class AddMembersPage extends React.Component {
   state = {
     step: 1,
-    name: '',
-    email: '',
     members: members
   }
 
@@ -31,13 +29,9 @@ class AddMembersPage extends React.Component {
     })
   }
 
-  handleChange = input => event => {
-    this.setState({ [input] : event.target.value });
-  }
-
-  onAddMember = () => {
-    var added = this.state.members.concat([{name: this.state.name, email: this.state.email}]);
-    this.setState({name: '', email: '', members: added});
+  onAddMember = (name, email) => {
+    var added = this.state.members.concat([{name: name, email: email}]);
+    this.setState({members: added});
   }
 
   onRemoveMember = (index) => {
@@ -46,13 +40,11 @@ class AddMembersPage extends React.Component {
   }
 
   render() {
-    const { name, email } = this.state;
-    const invite = { name, email };
     switch(this.state.step) {
       case 1:
         return <PayGroupPage nextStep={this.nextStep} 
-                  onAddMember={this.onAddMember} onRemoveMember={this.onRemoveMember} handleChange={this.handleChange} 
-                  invite={invite} members={this.state.members} />
+                  onAddMember={this.onAddMember} onRemoveMember={this.onRemoveMember}
+                  members={this.state.members} />
       
       case 2:
         return <PayConfirmPage members={this.state.members} prevStep={this.prevStep} nextStep={this.nextStep} />
