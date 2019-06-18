@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory'
 import HomePage from './Home';
 import DemoEntryPage from './DemoEntry';
 import CataloguePage from './Catalogue';
@@ -12,7 +13,20 @@ import '../styles/App.css';
 
 import * as routes from '../constants/routes';
 
+import ReactGA from 'react-ga';
+
+const history = createHistory()
+history.listen(location => {
+	ReactGA.set({ page: location.pathname })
+	ReactGA.pageview(location.pathname)
+})
+
 class App extends React.Component {
+
+  componentDidMount() {
+    ReactGA.pageview(window.location.pathname)
+  }
+
   render() {
     return (
       <Router>

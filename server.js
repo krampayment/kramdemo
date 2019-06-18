@@ -4,6 +4,8 @@ const request = require("request");
 const axios = require("axios");
 const cors = require('cors');
 
+require('dotenv').config();
+
 app = express();
 
 app.use(bodyParser());
@@ -20,7 +22,7 @@ app.post("/", function(req, res) {
     url: "https://us3.api.mailchimp.com/3.0/lists/03cfc8aa01",
     method: "POST",
     headers: {
-      "Authorization": "kram 33818cc8033c094569c248152bb4129b-us3"
+      "Authorization": process.env.MAILCHIMP_KEY
     },
     body: jsonData
   }
@@ -67,6 +69,6 @@ app.post("/", function(req, res) {
   // .then(response => console.log(response));
 });
 
-app.listen(3000, function(req, res) {
+app.listen(9000, function(req, res) {
   console.log("Server running on port 3000");
 });
