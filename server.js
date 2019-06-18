@@ -27,7 +27,7 @@ app.post("/", function(req, res) {
     body: jsonData
   }
 
-  request(options, function(error, response, body) {
+  request(options, cors(), function(error, response, body) {
     if (error) {
       console.log(error);
     } else {
