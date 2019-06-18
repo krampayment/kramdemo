@@ -10,7 +10,7 @@ class DemoEntry extends React.Component {
   }
 
   sendEmail = () => {
-    axios.post("demo.krampayment.com:9000", {
+    axios.post("http://localhost:9000/", {
       members: [{
         "email_address": this.state.email,
         "status": "unsubscribed",
