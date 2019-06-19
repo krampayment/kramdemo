@@ -1,6 +1,9 @@
 import React from "react";
 import { withRouter } from 'react-router-dom';
 import axios from 'axios';
+import ReactGA from 'react-ga';
+
+import * as routes from '../constants/routes';
 
 class DemoEntry extends React.Component {
 
@@ -10,6 +13,12 @@ class DemoEntry extends React.Component {
   }
 
   sendEmail = () => {
+    
+    ReactGA.event({
+      category: 'User',
+      action: 'Started Demo'
+    });
+
     axios.post("http://demo.krampayment.com:9000/", {
       members: [{
         "email_address": this.state.email,
