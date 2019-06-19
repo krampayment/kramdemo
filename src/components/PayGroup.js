@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from 'react-router-dom';
-import GroupMembers from './GroupMembers';
+import Faker from "faker";
 import AddMember from './AddMember';
 
 
@@ -51,7 +51,43 @@ class PayGroupPage extends React.Component {
           </h1>
           <AddMember addMember={this.addMember} />
           <div class="ui divider"></div>
-          <GroupMembers members={this.props.members} />
+          <div class="ui four doubling cards">
+            { this.props.members.map((member, index) => {
+              return (
+                <div class="card group-member-card">
+                  <div class="ui items">
+                    <div class="item">
+                      <div class="ui mini circular image">
+                        <img src={Faker.image.avatar()} />
+                      </div>
+                      <div class="middle aligned content group-member">
+                        <a class="header">{member.name}</a>
+                        <div class="meta">
+                          <span>{member.email}</span>
+                        </div>
+                      </div>
+                    </div>
+                    {index > 0 &&
+                    <div>
+                      <div class="ui mini vertical animated basic button">
+                        <div class="visible content">Edit</div>
+                        <div class="hidden content">
+                          <i class="right pencil icon"></i>
+                        </div>
+                      </div>
+                      <div class="ui mini vertical animated red basic button" onClick={() => this.removeMember(index)}>
+                        <div class="visible content">Remove</div>
+                        <div class="hidden content">
+                          <i class="right trash icon"></i>
+                        </div>
+                      </div>
+                    </div>
+                    }
+                  </div>
+                </div>
+              )
+            })}
+          </div>
           <div class="four column row row-margin">
             <div class="left floated column"></div>
             <div class="right floated column">

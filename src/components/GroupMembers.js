@@ -2,6 +2,10 @@ import React from 'react';
 import Faker from "faker";
 
 const GroupMembers = ({members}) => {
+  removeMember = (index) => {
+    this.props.removeMember(index);
+  }
+
   const memberList = members.map((member, index) => {
     return (
       <div class="card group-member-card">
