@@ -21,7 +21,7 @@ class PayCompletePage extends React.Component {
   subscribe = (e) => {
     e.preventDefault();
     if (e.target.id === "yes" && this.props.name && this.props.email) {
-      axios.post("http://localhost:9000/checkout/", {
+      axios.post("http://demo.krampayment.com:9000/checkout/", {
         members: [{
           "email_address": this.props.email,
           "status": "subscribed",
