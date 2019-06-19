@@ -51,7 +51,7 @@ class ProductPage extends React.Component {
                   </div>
                 </div>
                 <a class="ui submit secondary large button" href="#">Checkout</a>
-                <a id="demo-button" class="ui submit primary large button" href="checkout">Split with Kram</a>
+                <a id="demo-button" class="ui submit primary large button" onClick={() => this.props.history.push("/checkout")} >Split with Kram</a>
               </div>
             </div>
           </div>

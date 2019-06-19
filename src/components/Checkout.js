@@ -4,13 +4,6 @@ import PayGroupPage from './PayGroup'
 import PayConfirmPage from './PayConfirm'
 import PayCompletePage from './PayComplete'
 
-const members = [
-  {
-    name: "John Wick (You)",
-    email: "john@kram.com"
-  }
-]
-
 class AddMembersPage extends React.Component {
   state = {
     step: 1,
@@ -27,18 +20,6 @@ class AddMembersPage extends React.Component {
     this.setState({
       members
     })
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.name !== this.props.name) {
-      members= [
-        {
-          name: nextProps.name,
-          email: nextProps.email
-        }
-      ]
-      this.setState({ members: members });
-    }
   }
 
   nextStep = () => {
