@@ -1,8 +1,10 @@
 import React from "react";
 import { withRouter } from 'react-router-dom';
 import Faker from "faker";
+import numeral from 'numeral';
 
 class PayConfirmPage extends React.Component {
+
   back = (e) => {
     e.preventDefault()
     this.props.prevStep()
@@ -104,8 +106,8 @@ class PayConfirmPage extends React.Component {
                       <p>Your Share:</p>
                     </div>
                     <div className="eight wide column pay-amount">
-                      <p>$99.00</p>
-                      <p>$33.00</p>
+                      <p>$1000.00</p>
+                      <p>{"$" + numeral(1000.00/this.props.members.length).format('0.00')}</p>
                     </div>
                   </div>
                   </div>

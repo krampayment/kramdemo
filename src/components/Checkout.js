@@ -37,7 +37,7 @@ class AddMembersPage extends React.Component {
           email: nextProps.email
         }
       ]
-      this.setState({ members: members });
+      this.setState({ members });
     }
   }
 
