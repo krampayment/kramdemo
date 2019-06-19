@@ -56,7 +56,7 @@ class PayConfirmPage extends React.Component {
                         <div class="content credit-details">
                           <i class="large credit card outline icon icon-margin"></i>
                           <div class="description">
-                            Mastercard •••• •••• •••• 1234<br />John Wick
+                            Mastercard •••• •••• •••• 1234<br />{this.props.name}
                           </div>
                         </div>
                       </div>

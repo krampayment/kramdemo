@@ -49,7 +49,7 @@ class PayGroupPage extends React.Component {
               Group Members
             </div>
           </h1>
-          <AddMember addMember={this.addMember} />
+          <AddMember addMember={this.addMember} name={this.props.name} email={this.props.email}/>
           <div class="ui divider"></div>
           <div class="ui four doubling cards">
             { this.props.members.map((member, index) => {

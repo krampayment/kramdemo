@@ -26,7 +26,7 @@ class ProductPage extends React.Component {
             </div>
             <div className="column">
               <h1 className="ui huge header product-name">Product Name</h1>
-              <h3 className="ui header product-price">$99.99
+              <h3 className="ui header product-price">$1000.00
                 <div class="sub header">
                   <i class="star icon"></i>
                   <i class="star icon"></i>

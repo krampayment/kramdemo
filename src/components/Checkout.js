@@ -14,7 +14,31 @@ const members = [
 class AddMembersPage extends React.Component {
   state = {
     step: 1,
-    members: members
+    members: []
+  }
+
+  componentDidMount() {
+    const members = [
+      { 
+        name: this.props.name + " (You)",
+        email: this.props.email
+      }
+    ]
+    this.setState({
+      members
+    })
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.name !== this.props.name) {
+      members= [
+        {
+          name: nextProps.name,
+          email: nextProps.email
+        }
+      ]
+      this.setState({ members: members });
+    }
   }
 
   nextStep = () => {
@@ -42,15 +66,15 @@ class AddMembersPage extends React.Component {
   render() {
     switch(this.state.step) {
       case 1:
-        return <PayGroupPage nextStep={this.nextStep} 
+        return <PayGroupPage history={this.props.history} nextStep={this.nextStep} 
                   onAddMember={this.onAddMember} onRemoveMember={this.onRemoveMember}
                   members={this.state.members} />
       
       case 2:
-        return <PayConfirmPage members={this.state.members} prevStep={this.prevStep} nextStep={this.nextStep} />
+        return <PayConfirmPage name={this.props.name} history={this.props.history} members={this.state.members} prevStep={this.prevStep} nextStep={this.nextStep} />
 
       case 3:
-        return <PayCompletePage prevStep={this.prevStep} nextStep={this.nextStep}/>
+        return <PayCompletePage history={this.props.history} prevStep={this.prevStep} nextStep={this.nextStep} name={this.props.name} email={this.props.email} />
     }
     
   };

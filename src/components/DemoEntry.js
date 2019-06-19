@@ -4,31 +4,37 @@ import axios from 'axios';
 import ReactGA from 'react-ga';
 
 import * as routes from '../constants/routes';
+import {isEmail} from "../utils/helpers";
 
 class DemoEntry extends React.Component {
 
   state = {
     name: "",
-    email: ""
+    email: "",
+    inputStyle: "field"
   }
 
   sendEmail = () => {
-    
     ReactGA.event({
       category: 'User',
       action: 'Started Demo'
     });
-
-    axios.post("http://demo.krampayment.com:9000/", {
-      members: [{
-        "email_address": this.state.email,
-        "status": "unsubscribed",
-        "merge_fields": {
-          "FNAME": this.state.name,
-          "LNAME": ""
-        }
-      }]
-    })
+    if (isEmail(this.state.email)) {
+      axios.post("http://localhost:9000/", {
+        members: [{
+          "email_address": this.state.email,
+          "status": "unsubscribed",
+          "merge_fields": {
+            "FNAME": this.state.name,
+            "LNAME": ""
+          }
+        }]
+      })
+      this.props.update(this.state.name, this.state.email);
+      this.props.history.push("/product");
+    } else {
+      this.setState({ inputStyle: "field error"});
+    }
   }
 
   handleChange = (e) => {
@@ -50,7 +56,7 @@ class DemoEntry extends React.Component {
               <label>Name</label>
               <input name="name" onChange={this.handleChange} type="text" placeholder="e.g. John Wick" />
             </div>
-            <div class="field">
+            <div class={this.state.inputStyle}>
               <label>Email</label>
               <input name="email" onChange={this.handleChange} type="text" placeholder="e.g. john@kram.com" />
             </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from 'react-router-dom';
+import axios from 'axios';
 
 class PayCompletePage extends React.Component {
 
@@ -15,6 +16,24 @@ class PayCompletePage extends React.Component {
   continue = (e) => {
     e.preventDefault();
     this.props.nextStep()
+  }
+
+  subscribe = (e) => {
+    e.preventDefault();
+    if (e.target.id === "yes" && this.props.name && this.props.email) {
+      axios.post("http://localhost:9000/checkout/", {
+        members: [{
+          "email_address": this.props.email,
+          "status": "subscribed",
+          "merge_fields": {
+            "FNAME": this.props.name,
+            "LNAME": ""
+          }
+        }],
+        update_existing: true
+      })
+    }
+    window.location.href = "http://krampayment.com";
   }
 
   render() {
@@ -64,11 +83,11 @@ class PayCompletePage extends React.Component {
               </h2>
             </div>
             <div class="ui row actions">
-              <div class="ui positive right labeled icon button">
+              <div id="yes" class="ui positive right labeled icon button" onClick={this.subscribe}>
                 Yes
                 <i class="checkmark icon"></i>
               </div>
-              <div class="ui black deny button">
+              <div id="no" class="ui black deny button" onClick={this.subscribe}>
                 No
               </div>
             </div>

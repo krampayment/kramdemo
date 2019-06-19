@@ -17,7 +17,25 @@ import * as routes from '../constants/routes';
 
 class App extends React.Component {
 
+  state = {
+    name: "",
+    email: ""
+  }
+
+  updateUserDetails = (name, email) => {
+    this.setState({
+      name: name,
+      email: email
+    });
+  }
+
+  componentDidMount() {
+    ReactGA.pageview(window.location.pathname)
+  }
+
   render() {
+    console.log(this.state.name);
+    console.log(this.state.email);
     return (
       <Router>
         <GAListener trackingId="UA-142375727-1">
@@ -28,7 +46,7 @@ class App extends React.Component {
             /> */}
             <Route
               exact path={routes.DEMOENTRY}
-              component={() => <DemoEntryPage />}
+              component={() => <DemoEntryPage update={this.updateUserDetails}/>}
             />
             <Route
               exact path={routes.CATALOGUE}
@@ -52,7 +70,7 @@ class App extends React.Component {
             />
             <Route
               exact path={routes.CHECKOUT}
-              component={() => <CheckoutPage />}
+              component={() => <CheckoutPage name={this.state.name} email={this.state.email} />}
             />
           </div>
         </GAListener>

@@ -25,8 +25,8 @@ class ProductPage extends React.Component {
                 <img src="/images/nike_shoes.jpg" className="ui large bordered centered image" />
             </div>
             <div className="column">
-              <h1 className="ui huge header product-name">Product Name</h1>
-              <h3 className="ui header product-price">$99.99
+              <h1 className="ui huge header product-name">Nike Super Sneakers</h1>
+              <h3 className="ui header product-price">$1000.00
                 <div class="sub header">
                   <i class="star icon"></i>
                   <i class="star icon"></i>
@@ -39,15 +39,15 @@ class ProductPage extends React.Component {
                 </div>
               </h3>
               <p className="product-description">
-                Yes that's right, you thought it was the stuff of dreams, but even bananas can be bioengineered.
+                Dream sneakers that could make anyone happy. Highly recommended as a gift for that special someone.
               </p>
               <div class="ui form">
                 <div class="five wide field">
                   <label>Quantity</label>
                   <div class="ui left action input">
-                    <button class="ui icon button" onClick={() => this.decrementQty()}><i className="minus icon"></i></button>
+                    <button class="ui icon button" ><i className="minus icon"></i></button>
                     <input type="text" className="quantity" value={this.state.quantity} />
-                    <button class="ui icon button right" onClick={() => this.incrementQty()}><i className="plus icon"></i></button>
+                    <button class="ui icon button right"><i className="plus icon"></i></button>
                   </div>
                 </div>
                 <a class="ui submit secondary large button" href="#">Checkout</a>

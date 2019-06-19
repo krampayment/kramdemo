@@ -27,7 +27,7 @@ app.post("/", function(req, res) {
     body: jsonData
   }
 
-  request(options, cors(), function(error, response, body) {
+  request(options, function(error, response, body) {
     if (error) {
       console.log(error);
     } else {
@@ -68,5 +68,28 @@ app.post("/", function(req, res) {
   // })
   // .then(response => console.log(response));
 });
+
+app.post('/checkout/', function(req,res) {
+  var data = req.body;
+
+  var jsonData = JSON.stringify(data);
+
+  var options = {
+    url: "https://us3.api.mailchimp.com/3.0/lists/03cfc8aa01",
+    method: "POST",
+    headers: {
+      "Authorization": process.env.MAILCHIMP_KEY
+    },
+    body: jsonData
+  }
+
+  request(options, cors(), function(error, response, body) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Success");
+    }
+  })
+})
 
 app.listen(process.env.PORT || 9000, "0.0.0.0");
