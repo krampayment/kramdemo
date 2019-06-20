@@ -21,7 +21,7 @@ class DemoEntry extends React.Component {
       action: 'Started Demo'
     });
     if (isEmail(this.state.email)) {
-      axios.post("http://demo.krampayment.com:8080/", {
+      axios.post("https://demo.krampayment.com:8443/", {
         members: [{
           "email_address": this.state.email,
           "status": this.state.status,
