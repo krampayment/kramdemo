@@ -36,7 +36,7 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <GAListener trackingId="UA-142316503-1">
+        <GAListener trackingId="UA-142489012-1">
           <div style={{height: '100%'}}>
             {/* <Route
               exact path={routes.HOME}
