@@ -15,25 +15,7 @@ class PayCompletePage extends React.Component {
 
   continue = (e) => {
     e.preventDefault();
-    this.props.nextStep()
-  }
-
-  subscribe = (e) => {
-    e.preventDefault();
-    if (e.target.id === "yes" && this.props.name && this.props.email) {
-      axios.post("http://demo.krampayment.com:9000/checkout/", {
-        members: [{
-          "email_address": this.props.email,
-          "status": "subscribed",
-          "merge_fields": {
-            "FNAME": this.props.name,
-            "LNAME": ""
-          }
-        }],
-        update_existing: true
-      })
-    }
-    window.location.href = "http://krampayment.com";
+    window.location.href = "https://krampayment.com";
   }
 
   render() {
@@ -62,12 +44,12 @@ class PayCompletePage extends React.Component {
           </div>
         </div>
         <div class="ui container steps-content">
-          <h1 class="ui header">
+          {/* <h1 class="ui header">
             <div class="content">
-              That's the end of our demo!
+            Thanks for your time
             </div>
             <div class="sub header">Thanks for your time, any feedback is appreciated at nockram@gmail.com</div>
-          </h1>
+          </h1> */}
           <div id="completed-segment" class="ui very padded text container segment">
             <div class="ui centered row" style={{ textAlign: 'center' }}>
               <svg id="completed-smile" width="64" height="64" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -77,18 +59,14 @@ class PayCompletePage extends React.Component {
             <div class="ui row">
               <h2 class="ui header">
                 <div class="content">
-                  Please indicate your interest.
-                  <div class="sub header">Would you like to keep up to date with Kram's latest updates, newsletters and any upcoming events?</div>
+                That's the end of our demo, thank you for your time.
+                  <div class="sub header contact">An email will be sent to you shortly. Any feedback is appreciated at contact@krampayment.com</div>
                 </div>
               </h2>
             </div>
             <div class="ui row actions">
-              <div id="yes" class="ui positive right labeled icon button" onClick={this.subscribe}>
-                Yes
-                <i class="checkmark icon"></i>
-              </div>
-              <div id="no" class="ui black deny button" onClick={this.subscribe}>
-                No
+              <div id="no" class="ui black deny button" onClick={this.continue}>
+                Continue
               </div>
             </div>
           </div>

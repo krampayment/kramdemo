@@ -11,7 +11,8 @@ class DemoEntry extends React.Component {
   state = {
     name: "",
     email: "",
-    inputStyle: "field"
+    inputStyle: "field",
+    status: "unsubscribed"
   }
 
   sendEmail = () => {
@@ -20,10 +21,10 @@ class DemoEntry extends React.Component {
       action: 'Started Demo'
     });
     if (isEmail(this.state.email)) {
-      axios.post("http://demo.krampayment.com:9000/", {
+      axios.post("http://demo.krampayment.com:8080/", {
         members: [{
           "email_address": this.state.email,
-          "status": "unsubscribed",
+          "status": this.state.status,
           "merge_fields": {
             "FNAME": this.state.name,
             "LNAME": ""
@@ -38,30 +39,42 @@ class DemoEntry extends React.Component {
   }
 
   handleChange = (e) => {
-    this.setState({[e.target.name]: e.target.value});
+    if (e.target.name === "subscribe") {
+      switch(e.target.checked) {
+        case true:
+          this.setState({ status: "subscribed"});
+          break;
+        default:
+          this.setState({ status: "unsubscribed"});
+      }
+    } else {
+      this.setState({[e.target.name]: e.target.value});
+    }
   }
 
   render() {
     return (
       <div id="kram-payment" class="ui middle aligned center aligned grid">
         <div id="demo-segment" class="authentication column">
+        <img src="/images/kram-logo.png" className="ui large bordered centered image" />
           <h1 class="ui header">
             <div class="content demo-header">
-              Welcome to KRAM demo
+              Welcome to Kram Payment
             </div>
-            <a class="sub header description" href="signup">Before we begin, please fill in your details for market validation purposes. </a>
+            <a class="sub header description" href="signup">Before we begin, please fill in your details to find out more. </a>
           </h1>
           <div class="ui large form">
             <div class="field">
-              <label>Name</label>
-              <input name="name" onChange={this.handleChange} type="text" placeholder="e.g. John Wick" />
+              <input name="name" onChange={this.handleChange} type="text" placeholder="Name" />
             </div>
             <div class={this.state.inputStyle}>
-              <label>Email</label>
-              <input name="email" onChange={this.handleChange} type="text" placeholder="e.g. john@kram.com" />
+              <input name="email" onChange={this.handleChange} type="text" placeholder="Email Address" />
             </div>
-            
-            <a id="demo-button" class="fluid ui large button" onClick={this.sendEmail}>Continue to Demo</a>
+            <div class="ui checkbox">
+              <input type="checkbox" name="subscribe" onChange={this.handleChange} />
+              <label>I would like to receive newsletters from Kram and subscribe to the mailing list</label>
+            </div>
+            <a id="demo-button" class="fluid ui large button" onClick={this.sendEmail}>Sign up to Continue</a>
           </div>
         </div>
       </div>

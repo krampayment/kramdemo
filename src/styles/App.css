@@ -525,6 +525,10 @@
   text-align: center;
 }
 
+#completed-segment .sub.header.contact {
+  margin-top: 1em;
+}
+
 #completed-smile {
   background: var(--green-100);
   padding: 10px;
