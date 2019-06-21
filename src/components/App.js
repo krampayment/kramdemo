@@ -53,7 +53,7 @@ class App extends React.Component {
             />
             <Route
               exact path={routes.PRODUCTDEMO}
-              component={() => <ProductPage />}
+              component={() => <ProductPage name={this.state.name} email={this.state.email}/>}
             />
             <Route
               exact path={routes.CART}

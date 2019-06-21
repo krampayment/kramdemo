@@ -4,14 +4,15 @@ import axios from 'axios';
 import ReactGA from 'react-ga';
 
 import * as routes from '../constants/routes';
-import {isEmail} from "../utils/helpers";
+import {hasName, isEmail} from "../utils/helpers";
 
 class DemoEntry extends React.Component {
 
   state = {
     name: "",
     email: "",
-    inputStyle: "field",
+    nameInputStyle: "field",
+    emailInputStyle: "field",
     status: "unsubscribed"
   }
 
@@ -20,7 +21,7 @@ class DemoEntry extends React.Component {
       category: 'User',
       action: 'Started Demo'
     });
-    if (isEmail(this.state.email)) {
+    if (hasName(this.state.name) && isEmail(this.state.email)) {
       axios.post("https://demo.krampayment.com:8443/", {
         members: [{
           "email_address": this.state.email,
@@ -34,7 +35,12 @@ class DemoEntry extends React.Component {
       this.props.update(this.state.name, this.state.email);
       this.props.history.push("/product");
     } else {
-      this.setState({ inputStyle: "field error"});
+      if (!isEmail(this.state.email)) {
+        this.setState({ emailInputStyle: "field error"});
+      }
+      if (!hasName(this.state.name)) {
+        this.setState({ nameInputStyle: "field error"});
+      }
     }
   }
 
@@ -64,10 +70,10 @@ class DemoEntry extends React.Component {
             <a class="sub header description" href="signup">Before we begin, please fill in your details to find out more. </a>
           </h1>
           <div class="ui large form">
-            <div class="field">
+            <div class={this.state.nameInputStyle}>
               <input name="name" onChange={this.handleChange} type="text" placeholder="Name" />
             </div>
-            <div class={this.state.inputStyle}>
+            <div class={this.state.emailInputStyle}>
               <input name="email" onChange={this.handleChange} type="text" placeholder="Email Address" />
             </div>
             <div style={{textAlign: "center"}}>

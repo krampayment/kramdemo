@@ -7,9 +7,15 @@ class DemoExitPage extends React.Component {
     inputStyle: "field"
   }
 
+  componentDidMount() {
+    if (this.props.name === "" || this.props.email === "" ) {
+      this.props.history.push("/");
+    }
+  }
+
   continue = (e) => {
     e.preventDefault();
-    window.location.href = "https://demo.krampayment.com";
+    window.location.href = "https://krampayment.com";
   }
 
   render() {

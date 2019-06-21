@@ -1,10 +1,17 @@
 import React from "react";
 import { withRouter } from 'react-router-dom';
 import NavBar from './Nav';
+import ReactGA from 'react-ga';
 
 
 class ProductPage extends React.Component {
   state = { quantity: 1 }
+
+  componentDidMount() {
+    if (this.props.name === "" || this.props.email === "" ) {
+      this.props.history.push("/");
+    }
+  }
 
   incrementQty = () => {
     this.setState({ quantity: this.state.quantity + 1 });
@@ -13,6 +20,13 @@ class ProductPage extends React.Component {
   decrementQty = () => {
     if (this.state.quantity > 1) 
       this.setState({ quantity: this.state.quantity - 1 });
+  }
+
+  checkout = () => {
+    ReactGA.event({
+      category: 'User',
+      action: 'Normal Checkout'
+    });
   }
 
   render() {
@@ -50,7 +64,7 @@ class ProductPage extends React.Component {
                     <button class="ui icon button right"><i className="plus icon"></i></button>
                   </div>
                 </div>
-                <a class="ui submit secondary large button" href="#">Checkout</a>
+                <a class="ui submit secondary large button" href="#" onClick={this.checkout}>Checkout</a>
                 <a id="demo-button" class="ui submit primary large button" onClick={() => this.props.history.push("/checkout")} >Split with Kram</a>
               </div>
             </div>
