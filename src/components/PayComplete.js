@@ -15,7 +15,7 @@ class PayCompletePage extends React.Component {
 
   continue = (e) => {
     e.preventDefault();
-    window.location.href = "https://krampayment.com";
+    this.props.history.push("/thankyou");
   }
 
   render() {
@@ -44,12 +44,12 @@ class PayCompletePage extends React.Component {
           </div>
         </div>
         <div class="ui container steps-content">
-          {/* <h1 class="ui header">
+          <h1 class="ui header">
             <div class="content">
-            Thanks for your time
+            Complete order
             </div>
-            <div class="sub header">Thanks for your time, any feedback is appreciated at nockram@gmail.com</div>
-          </h1> */}
+            <div class="sub header">Your purchase will go through once all group members have transferred their share of the payment.</div>
+          </h1>
           <div id="completed-segment" class="ui very padded text container segment">
             <div class="ui centered row" style={{ textAlign: 'center' }}>
               <svg id="completed-smile" width="64" height="64" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -59,10 +59,28 @@ class PayCompletePage extends React.Component {
             <div class="ui row">
               <h2 class="ui header">
                 <div class="content">
-                That's the end of our demo, thank you for your time.
-                  <div class="sub header contact">An email will be sent to you shortly. Any feedback is appreciated at contact@krampayment.com</div>
+                Your share is ready to be paid!
+                  <div class="sub header contact">Order #1208</div>
                 </div>
               </h2>
+            </div>
+            <div class="ui row">
+              <div class="ui aligned list payment-status-list">
+                { this.props.members.map((member, index) => {
+                  return (
+                    <div class="item">
+                      <div class="content">
+                        <div class="header">
+                          {index > 0 ? (
+                            <i class="times icon unpaid"></i>
+                          ) : (
+                            <i class="check icon paid"></i>
+                          )}{member.name}</div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
             </div>
             <div class="ui row actions">
               <div id="no" class="ui black deny button" onClick={this.continue}>

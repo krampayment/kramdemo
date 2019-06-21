@@ -55,7 +55,7 @@ class AddMembersPage extends React.Component {
         return <PayConfirmPage name={this.props.name} history={this.props.history} members={this.state.members} prevStep={this.prevStep} nextStep={this.nextStep} />
 
       case 3:
-        return <PayCompletePage history={this.props.history} prevStep={this.prevStep} nextStep={this.nextStep} name={this.props.name} email={this.props.email} />
+        return <PayCompletePage history={this.props.history} prevStep={this.prevStep} members={this.state.members} nextStep={this.nextStep} name={this.props.name} email={this.props.email} />
     }
     
   };

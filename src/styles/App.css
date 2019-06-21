@@ -520,6 +520,19 @@
   text-align: center;
 }
 
+#completed-segment > .row > .payment-status-list {
+  display: inline-block;
+  text-align: left;
+}
+
+#completed-segment i.icon.check.paid {
+  color:#21ba45;
+}
+
+#completed-segment i.icon.times.unpaid {
+  color:#E53E3E;
+}
+
 #completed-segment > .actions {
   margin-top: 3em;
   text-align: center;

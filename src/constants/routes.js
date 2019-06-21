@@ -7,3 +7,4 @@ export const SIGNUP = '/signup';
 export const CHECKOUT = '/checkout';
 export const DEMOENTRY = '/';
 export const PRODUCTDEMO = '/product';
+export const DEMOEXIT = '/thankyou';

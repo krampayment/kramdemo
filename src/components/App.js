@@ -9,6 +9,7 @@ import CartPage from './Cart';
 import LoginPage from './Login';
 import SignupPage from './Signup';
 import CheckoutPage from './Checkout';
+import DemoExitPage from './DemoExit';
 import GAListener from './GAListener';
 import '../styles/App.css';
 
@@ -69,6 +70,10 @@ class App extends React.Component {
             <Route
               exact path={routes.CHECKOUT}
               component={() => <CheckoutPage name={this.state.name} email={this.state.email} />}
+            />
+            <Route
+              exact path={routes.DEMOEXIT}
+              component={() => <DemoExitPage name={this.state.name} email={this.state.email} />}
             />
           </div>
         </GAListener>
