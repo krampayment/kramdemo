@@ -56,7 +56,7 @@ class DemoEntry extends React.Component {
     return (
       <div id="kram-payment" class="ui middle aligned center aligned grid">
         <div id="demo-segment" class="authentication column">
-        <img src="/images/kram-logo.png" className="ui large bordered centered image" />
+        <img src="/images/kram-logo.png" className="ui large centered image" />
           <h1 class="ui header">
             <div class="content demo-header">
               Welcome to Kram Payment
@@ -70,9 +70,11 @@ class DemoEntry extends React.Component {
             <div class={this.state.inputStyle}>
               <input name="email" onChange={this.handleChange} type="text" placeholder="Email Address" />
             </div>
+            <div style={{textAlign: "center"}}>
             <div class="ui checkbox">
               <input type="checkbox" name="subscribe" onChange={this.handleChange} />
               <label>I would like to receive newsletters from Kram and subscribe to the mailing list</label>
+            </div>
             </div>
             <a id="demo-button" class="fluid ui large button" onClick={this.sendEmail}>Sign up to Continue</a>
           </div>
