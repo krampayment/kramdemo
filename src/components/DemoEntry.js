@@ -13,7 +13,8 @@ class DemoEntry extends React.Component {
     email: "",
     nameInputStyle: "field",
     emailInputStyle: "field",
-    status: "unsubscribed"
+    status: "subscribed",
+    checked: true
   }
 
   sendEmail = () => {
@@ -48,10 +49,10 @@ class DemoEntry extends React.Component {
     if (e.target.name === "subscribe") {
       switch(e.target.checked) {
         case true:
-          this.setState({ status: "subscribed"});
+          this.setState({ status: "subscribed", checked: true});
           break;
         default:
-          this.setState({ status: "unsubscribed"});
+          this.setState({ status: "unsubscribed", checked: false});
       }
     } else {
       this.setState({[e.target.name]: e.target.value});
@@ -78,7 +79,7 @@ class DemoEntry extends React.Component {
             </div>
             <div style={{textAlign: "center"}}>
             <div class="ui checkbox">
-              <input type="checkbox" name="subscribe" onChange={this.handleChange} />
+              <input type="checkbox" name="subscribe" onChange={this.handleChange} checked={this.state.checked}/>
               <label>I would like to receive newsletters from Kram and subscribe to the mailing list</label>
             </div>
             </div>
