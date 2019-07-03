@@ -11,6 +11,9 @@ class AddMembersPage extends React.Component {
   }
 
   componentDidMount() {
+    if (this.props.name === "" || this.props.email === "" ) {
+      this.props.history.push("/");
+    }
     const members = [
       { 
         name: this.props.name + " (You)",

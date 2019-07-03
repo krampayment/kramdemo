@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from 'react-router-dom';
 import Faker from "faker";
 import AddMember from './AddMember';
+import ReactGA from 'react-ga';
 
 
 class PayGroupPage extends React.Component {
@@ -11,10 +12,18 @@ class PayGroupPage extends React.Component {
   }
 
   addMember = (name, email) => {
+    ReactGA.event({
+      category: 'User',
+      action: 'Added Member'
+    });
     this.props.onAddMember(name, email);
   }
 
   removeMember = (index) => {
+    ReactGA.event({
+      category: 'User',
+      action: 'Removed Member'
+    });
     this.props.onRemoveMember(index);
   }
   
