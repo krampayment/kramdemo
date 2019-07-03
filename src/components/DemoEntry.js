@@ -12,7 +12,7 @@ class DemoEntry extends React.Component {
     name: "",
     email: "",
     inputStyle: "field",
-    status: "unsubscribed"
+    isSubscribed: true
   }
 
   sendEmail = () => {
@@ -21,10 +21,12 @@ class DemoEntry extends React.Component {
       action: 'Started Demo'
     });
     if (isEmail(this.state.email)) {
+      var status = this.state.isSubscribed === true ? "subscribed" : "unsubscribed";
+
       axios.post("https://demo.krampayment.com:8443/", {
         members: [{
           "email_address": this.state.email,
-          "status": this.state.status,
+          "status": status,
           "merge_fields": {
             "FNAME": this.state.name,
             "LNAME": ""
@@ -39,17 +41,13 @@ class DemoEntry extends React.Component {
   }
 
   handleChange = (e) => {
-    if (e.target.name === "subscribe") {
-      switch(e.target.checked) {
-        case true:
-          this.setState({ status: "subscribed"});
-          break;
-        default:
-          this.setState({ status: "unsubscribed"});
-      }
-    } else {
-      this.setState({[e.target.name]: e.target.value});
-    }
+    const target = e.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
   }
 
   render() {
@@ -72,7 +70,7 @@ class DemoEntry extends React.Component {
             </div>
             <div style={{textAlign: "center"}}>
             <div class="ui checkbox">
-              <input type="checkbox" name="subscribe" onChange={this.handleChange} />
+              <input type="checkbox" name="isSubscribed" checked={this.state.isSubscribed} onChange={this.handleChange} />
               <label>I would like to receive newsletters from Kram and subscribe to the mailing list</label>
             </div>
             </div>
